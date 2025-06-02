@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>secound project of javascript</title>
+    
+</head>
+<body style="text-align: center; justify-items: center; background-color: rgb(8, 8, 8);">
+    <div style="background-color: rgb(231, 229, 229); box-shadow: 1px 1px 20px white; padding: 20px;margin-top: 30px; padding-bottom: 100px ; border-radius: 20px;">
+    <h1> Check your grade!</h1>
+    <hr>
+    <form onsubmit="grade(event);">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="name...." id="name"/></td>
+            <td><select>
+                <option>Choose your class</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select></td>
+            <td><input type="number" placeholder="Score...." id="score" min="1" max="100" required/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="send" ></td>
+        </tr> 
+    </table>
+    </form>
+        <div id="result"></div>
+    </div> 
+    <script>
+        function grade(){
+            event.preventDefault();
+            const score = document.getElementById("score").value;
+            if(score >= 90){
+                document.getElementById("result").innerHTML = "grade: A ";
+            } else if(score >= 75){
+                document.getElementById("result").innerHTML = "grade: B ";
+            } else if(score >= 50){
+                document.getElementById("result").innerHTML = "grade: c ";
+            } else{
+                document.getElementById("result").innerHTML = "You failed";
+            }
+        }
+    </script>
+
+</body>
+</html>
